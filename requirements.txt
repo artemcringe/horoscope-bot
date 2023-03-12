@@ -5,4 +5,4 @@ gino==1.0.1
 greenlet==2.0.2
 loguru==0.6.0
 lxml==4.9.2
-dotenv
+python-dotenv
