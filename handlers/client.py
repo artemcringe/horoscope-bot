@@ -266,7 +266,7 @@ async def schedule(message: types.Message | CallbackQuery, wait_for: int):
         while True:
             await asyncio.sleep(wait_for)
             now = datetime.now()
-            if now.hour == 6 and now.minute == 33:
+            if now.hour == 6 and now.minute == 39:
                 await prepare_data(user_id=message.from_user.id)
                 logger.success(f'Функция schedule была успешно вызвана в {now.hour}:{now.minute}')
 
