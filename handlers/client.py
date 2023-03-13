@@ -259,14 +259,14 @@ async def schedule(message: types.Message | CallbackQuery, wait_for: int):
         while True:
             await asyncio.sleep(wait_for)
             now = datetime.now()
-            if now.hour == 18 and now.minute == 0:
+            if now.hour == 15 and now.minute == 0:
                 await prepare_data(user_id=message.from_user.id)
                 logger.success(f'Функция schedule была успешно вызвана в {now.hour}:{now.minute}')
     else:
         while True:
             await asyncio.sleep(wait_for)
             now = datetime.now()
-            if now.hour == 9 and now.minute == 33:
+            if now.hour == 6 and now.minute == 33:
                 await prepare_data(user_id=message.from_user.id)
                 logger.success(f'Функция schedule была успешно вызвана в {now.hour}:{now.minute}')
 
