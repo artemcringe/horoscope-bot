@@ -266,7 +266,7 @@ async def schedule(message: types.Message | CallbackQuery, wait_for: int):
         while True:
             await asyncio.sleep(wait_for)
             now = datetime.now()
-            if now.hour == 9 and now.minute == 0:
+            if now.hour == 9 and now.minute == 33:
                 await prepare_data(user_id=message.from_user.id)
                 logger.success(f'Функция schedule была успешно вызвана в {now.hour}:{now.minute}')
 
@@ -292,3 +292,4 @@ def register_handlers_client(disp: Dispatcher):
     disp.register_message_handler(send, commands=['send'], state='*')
     disp.register_message_handler(change, commands=['change'], state='*')
     disp.register_message_handler(get_my_info, commands=['get_info'], state='*')
+    disp.register_message_handler(schedule, state='*')
